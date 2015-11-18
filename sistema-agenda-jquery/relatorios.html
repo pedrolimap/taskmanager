@@ -1,0 +1,56 @@
+<h2>Relatorios</h2>
+
+<div class="modal fade" id="novoModal" style="display: none">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3>Relatórios</h3>
+    </div>
+    <div class="modal-body">
+
+        <div id="saveMessage" class="alert alert-success" style="display:none">
+            <img src="img/ajax-loader.gif"> Salvando dados...
+        </div>
+
+        <form id="form" class="form-horizontal well">
+
+
+            <div class="control-group">
+                <label class="control-label" for="selectRelatorio">Relatório:</label>
+                <div class="controls">
+                    <select id="selectRelatorio" class="input-xlarge">
+                        <option value="0" selected="selected">Escolha um relatório</option>
+                        <option value="1">Quantidade de tarefas por período</option>
+                        <option value="2">Tempo Médio por período</option>
+                        <option value="3">Quantidade de pontos por período</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" id="labelData" for="inputData" style="display:none">Data</label>
+                <div class="controls">
+                    <input type="date" id="inputData" class="input-medium" style="display:none"/>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" id="labelDataI" for="inputDataI" style="display:none">Data inicial</label>
+                <div class="controls">
+                    <input type="date" id="inputDataI" class="input-medium" style="display:none"/>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" id="labelDataF" for="inputDataF" style="display:none">Data final</label>
+                <div class="controls">
+                    <input type="date" id="inputDataF" class="input-medium" style="display:none"/>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a id="processar" href="#" class="btn btn-primary">Processar</a>
+    </div>
+</div>

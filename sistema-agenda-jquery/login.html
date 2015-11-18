@@ -1,0 +1,124 @@
+<!-- Estilo da página em CSS -->
+<style type="text/css">
+    #tryLogin
+    {
+        max-width: 300px;
+        margin: 0 auto 20px;
+    }
+
+    .form-signin
+    {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    }
+
+    .form-signin .form-signin-heading,
+    .form-signin .checkbox
+    {
+        margin-bottom: 10px;
+    }
+    .form-signin input[type="text"],
+    .form-signin input[type="password"]
+    {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+    }
+</style>
+
+<!-- Formulario para enviar os dados de login -->
+<form id="form-login" class="form-signin">
+    <h2 class="form-signin-heading">Login</h2>
+
+    <!-- Classes configuradas pelo Twitter Bootstrap para exibir mensagem de erro. style da div invisivel controlada pelo JS -->
+    <div id="erroLoginEmpty" class="alert alert-error" style="display:none">
+        Login/Senha requeridos
+    </div>
+    <!-- error retornado pelo servidor. Visibilidade controlada pelo JS -->
+    <div id="erroLoginServer" class="alert alert-error" style="display:none">teste erro server</div>
+
+    <!-- Classes de formatacao ex, control-group usado quando o campo estiver vazio o mesmo ser marcado como inválido -->
+    <!-- A class input-block-level deixa o campo com 100% de largura-->
+    <div class="control-group">
+        <input id="login" type="text" class="input-block-level" placeholder="login">
+    </div>
+    <div class="control-group">
+        <input id="senha" type="password" class="input-block-level" placeholder="senha">
+    </div>
+
+    <button type="button" id="btnNew" class="btn btn-large btn-primary">Novo usuário</button>
+    <button type="button" id="btnIr" class="btn btn-large btn-primary">Acessar</button>
+
+</form>
+
+
+<div class="modal fade" id="novoModal" style="display: none">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3>Novo usuário</h3>
+    </div>
+    <div class="modal-body">
+
+        <div id="saveMessage" class="alert alert-success" style="display:none">
+            <img src="img/ajax-loader.gif"> Salvando dados...
+        </div>
+
+        <form id="form" class="form-horizontal well">
+
+            <div id="errorEmpty" class="alert alert-error" style="display:none">
+                Campos requeridos
+            </div>
+
+            <div id="errorServer" class="alert alert-error" style="display:none"></div>
+
+
+            <div class="control-group">
+                <label class="control-label" for="inputNome">Nome</label>
+                <div class="controls">
+                    <input type="text" id="inputNome" class="input-block-level" placeholder="nome">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="inputNome">E-mail</label>
+                <div class="controls">
+                    <input type="email" id="inputEmail" class="input-block-level" placeholder="e-mail">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputNome">Senha</label>
+                <div class="controls">
+                    <input type="password" id="inputSenha" class="input-block-level" placeholder="senha">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="inputData">Data Nascimento</label>
+                <div class="controls">
+                    <input type="date" id="inputData" class="input-medium"/>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a id="salvar" href="#" class="btn btn-primary">Salvar</a>
+    </div>
+</div>
+
+</div>
+
+
+<div id="tryLogin" class="alert alert-success" style="display:none">
+    <img src="img/ajax-loader.gif"> Realizando login...
+</div>
